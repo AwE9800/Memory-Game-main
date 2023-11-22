@@ -15,6 +15,8 @@ const gamePage = document.querySelector(`.memory-game`);
 const sectionMeny = document.querySelector('.section-meny');
 const sectionData = document.querySelector('.section-data');
 
+const img = document.querySelector(`.hidden1`);
+
 btnMotAndra.addEventListener('click', function () {
     sectionMeny.classList.add('hidden-meny');
     pvpPage.classList.remove('hidden-pvp');
@@ -37,3 +39,25 @@ playPveBtn.addEventListener(`click`, function () {
     sectionData.classList.add(`hidden-data`);
     gamePage.classList.remove(`hidden-game`);
 });
+
+let images = [
+    `assets/Bowser_Jr.png`,
+    `assets/Bowser.png`,
+    `assets/Daisy.png`,
+    `assets/DiddyReturns.png`,
+    `assets/Donkey_Kong.png`,
+    `assets/Luigi.png`,
+    `assets/Mario.png`,
+    `assets/Princess_Peach.png`,
+    `assets/Toad.png`,
+    `assets/Waluigi.png`,
+    `assets/Wario.png`,
+    `assets/Yoshi.png`,
+];
+
+// img.addEventListener(`click`, function () {
+//     img.classList.add(`läggtill`);
+//     let randomIndex = Math.floor(Math.random() * images.length);
+//     let nybild = images[randomIndex];
+//     img.src = nybild;
+// });
