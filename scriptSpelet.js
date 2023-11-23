@@ -71,13 +71,14 @@ shuffleCards();
 
 let cards = document.querySelectorAll(`.cards`);
 let openCards = [];
+let cardCheck = true;
 for (let i = 0; i < cards.length; i++) {
     let randomIndex = Math.floor(Math.random() * deck.length);
     let faceBackImg = cards[i].querySelector('.card-face--front img');
     faceBackImg.src = deck[randomIndex];
 
-    cards[i].addEventListener(`click`, function () {
-        if (openCards.length < 2) {
+    cards[i].addEventListener(`click`, function cardClicker() {
+        if (openCards.length < 2 && cardCheck && !cards[i].classList.contains('is-flipped')) {
             cards[i].classList.toggle(`is-flipped`);
             openCards.push(cards[i]);
             if (openCards.length === 2) {
@@ -88,14 +89,18 @@ for (let i = 0; i < cards.length; i++) {
     deck.splice(randomIndex, 1);
 }
 let clickedCards = [];
+
 function cardsMatch() {
     let card1 = openCards[0].querySelector('.card-face--front > img');
     let card2 = openCards[1].querySelector('.card-face--front > img');
     if (card1.src === card2.src) {
         card1.classList.add(`hidden`);
         card2.classList.add(`hidden`);
+        openCards[0].style.pointerEvents = 'none';
+        openCards[1].style.pointerEvents = 'none';
         clickedCards.push(card1, card2);
         updateScore(currentPlayer);
+        endGame();
         openCards = [];
     } else {
         openCards[0].classList.toggle(`is-flipped`);
