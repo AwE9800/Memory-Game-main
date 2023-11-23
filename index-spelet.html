@@ -1,117 +1,118 @@
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Slutprojekt Memory</title>
+        <!-- CSS reset -->
+        <link rel="stylesheet" href="styles/CSS-reset/app.css" />
+        <!-- CSS for The game -->
+        <link rel="stylesheet" href="styles/stylesMemory.css" />
+        <!-- CSS for player vs player -->
+        <link rel="stylesheet" href="styles/stylesPvp.css" />
+        <!-- CSS for the menu -->
+        <link rel="stylesheet" href="styles/stylesMeny.css" />
+        <!-- CSS for player vs computer -->
+        <link rel="stylesheet" href="styles/stylesPve.css" />
+        <!-- Fonts for styling -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" rel="stylesheet" />
+        <!-- Javascript for the game -->
+        <script src="scriptSpelet.js" defer></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slutprojekt Memory</title>
-    <!-- CSS reset -->
-    <link rel="stylesheet" href="styles/CSS-reset/app.css" />
-    <!-- CSS for The game -->
-    <link rel="stylesheet" href="styles/stylesMemory.css" />
-    <!-- CSS for player vs player -->
-    <link rel="stylesheet" href="styles/stylesPvp.css" />
-    <!-- CSS for the menu -->
-    <link rel="stylesheet" href="styles/stylesMeny.css" />
-    <!-- CSS for player vs computer -->
-    <link rel="stylesheet" href="styles/stylesPve.css" />
-    <!-- Fonts for styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" rel="stylesheet" />
-    <!-- Javascript for the game -->
-    <script src="scriptSpelet.js" defer></script>
-</head>
-
-<body>
-    <!-- Section Menu -->
-    <section class="section-meny">
-        <h1>Memory Game</h1>
-        <section class="main-section">
-            <h2>Val av spel</h2>
-            <button class="btn btn-mot-andra">Spela mot andra</button>
-            <button class="btn btn-mot-dator">Spela mot dator</button>
-        </section>
-    </section>
-    <!-- Section player vs player -->
-    <section class="PVP hidden-pvp">
-        <h2 class="rubrik-PVP">Spela mot andra</h2>
-        <section class="section-player1">
-            <label for="player1">Spelare 1</label>
-            <input class="player1-name" type="text" placeholder="Skriva namn på spelare 1" />
-        </section>
-        <section class="section-player2">
-            <label for="player2">Spelare 2</label>
-            <input class="player2-name" type="text" placeholder="Skriva namn på spelare 2" />
-        </section>
-        <button class="play-game-btn">Starta spelet</button>
-    </section>
-    <!-- Section player vs computer -->
-    <section class="section-data hidden-data wrapper">
-        <section class="">
-            <label class="Spelare" for="player">Spelare</label>
-            <input class="name-player-1-data" type="text" placeholder="Skriva namn på spelaren" />
-        </section>
-        <section>
-            <p class="nivå">Välj nivå på dator</p>
-            <div>
-                <button class="lätt">Lätt</button>
-                <button class="Svår">Svårt</button>
-            </div>
-        </section>
-        <button class="Starta">Starta spelet</button>
-    </section>
-    <!-- Section memory game -->
-    <section class="memory-game hidden-game" id="gamePlan">
-        <header class="section-scoreboard">
-            <div class="players-score">
-                <div class="conatiner-info">
-                    <h2 class="player1">Player1</h2>
-                    <h2 class="scoreboard1">Score: 0</h2>
-                </div>
-                <div class="conatiner-info">
-                    <h2 class="player2">Player2</h2>
-                    <h2 class="scoreboard2">Score: 0</h2>
-                </div>
-            </div>
-            <div class="section-gamewinner">
-                <h2 class="gamewinner hidden">Player.. wins the game</h2>
-            </div>
-            <div class="game">
-                <button class="btn resetgame">Reset game</button>
-                <button class="btn newgame">New game</button>
-            </div>
-        </header>
-        <section class="gamet">
-            <h2>Memory Game</h2>
-            <section class="section-bilderna">
-                <img class="nr1 hidden1" src="assets/BackgroundImg.jpg" alt="BackgroundImg" />
-                <img src="assets/BackgroundImg.jpg" alt="BackgroundImg" />
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
-                <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+    <body>
+        <!-- Section Menu -->
+        <section class="section-meny">
+            <h1>Memory Game</h1>
+            <section class="main-section">
+                <h2>Val av spel</h2>
+                <button class="btn btn-mot-andra">Spela mot andra</button>
+                <button class="btn btn-mot-dator">Spela mot dator</button>
             </section>
         </section>
-    </section>
-</body>
-
+        <!-- Section player vs player -->
+        <section class="PVP hidden-pvp">
+            <h2 class="rubrik-PVP">Spela mot andra</h2>
+            <section class="section-player1">
+                <label for="player1">Spelare 1</label>
+                <input class="player1-name" type="text" placeholder="Skriva namn på spelare 1" />
+            </section>
+            <section class="section-player2">
+                <label for="player2">Spelare 2</label>
+                <input class="player2-name" type="text" placeholder="Skriva namn på spelare 2" />
+            </section>
+            <button class="play-game-btn">Starta spelet</button>
+        </section>
+        <!-- Section player vs computer -->
+        <section class="section-data hidden-data wrapper">
+            <section class="">
+                <label class="Spelare" for="player">Spelare</label>
+                <input class="name-player-1-data" type="text" placeholder="Skriva namn på spelaren" />
+            </section>
+            <section>
+                <p class="nivå">Välj nivå på dator</p>
+                <div>
+                    <button class="lätt">Lätt</button>
+                    <button class="Svår">Svårt</button>
+                </div>
+            </section>
+            <button class="Starta">Starta spelet</button>
+        </section>
+        <!-- Section memory game -->
+        <section class="memory-game hidden-game" id="gamePlan">
+            <header class="section-scoreboard">
+                <div class="players-score">
+                    <div class="conatiner-info">
+                        <h2 class="player1">Player1</h2>
+                        <h2 class="scoreboard1">Score: 0</h2>
+                    </div>
+                    <div class="conatiner-info">
+                        <h2 class="player2">Player2</h2>
+                        <h2 class="scoreboard2">Score: 0</h2>
+                    </div>
+                </div>
+                <div class="section-gamewinner">
+                    <h2 class="gamewinner hidden">Player.. wins the game</h2>
+                </div>
+                <div class="game">
+                    <button class="btn resetgame">Reset game</button>
+                    <button class="btn newgame">New game</button>
+                </div>
+            </header>
+            <section class="gamet">
+                <h2>Memory Game</h2>
+                <section class="section-bilderna">
+                    <div>
+                        <img class="nr1 hidden1" src="assets/BackgroundImg.jpg" alt="BackgroundImg" />
+                    </div>
+                    <div class="kd"></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                    <div><img src="assets/BackgroundImg.jpg" alt="BackgroundImg" /></div>
+                </section>
+            </section>
+        </section>
+    </body>
 </html>
