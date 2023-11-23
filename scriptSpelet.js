@@ -39,7 +39,7 @@ playPveBtn.addEventListener(`click`, function () {
     sectionData.classList.add(`hidden-data`);
     gamePage.classList.remove(`hidden-game`);
 });
-
+// Bilderna till memoryt
 let images = [
     `assets/Bowser_Jr.png`,
     `assets/Bowser.png`,
@@ -55,6 +55,7 @@ let images = [
     `assets/Yoshi.png`,
 ];
 
+// Blandar bilderna i oordning och gör dem till 2 av varje
 let deck = [];
 
 function shuffleCards() {
@@ -65,7 +66,6 @@ function shuffleCards() {
         deck[i] = deck[k];
         deck[k] = temp;
     }
-    console.log(deck);
 }
 shuffleCards();
 
@@ -81,25 +81,48 @@ for (let i = 0; i < cards.length; i++) {
             cards[i].classList.toggle(`is-flipped`);
             openCards.push(cards[i]);
             if (openCards.length === 2) {
-                setTimeout(ifmatch, 1000);
+                setTimeout(cardsMatch, 1000);
             }
         }
     });
     deck.splice(randomIndex, 1);
 }
-
-function ifmatch() {
+let clickedCards = [];
+function cardsMatch() {
     let card1 = openCards[0].querySelector('.card-face--front > img');
     let card2 = openCards[1].querySelector('.card-face--front > img');
-
-    console.log(openCards);
     if (card1.src === card2.src) {
         card1.classList.add(`hidden`);
         card2.classList.add(`hidden`);
+        clickedCards.push(card1, card2);
+        updateScore(currentPlayer);
         openCards = [];
     } else {
         openCards[0].classList.toggle(`is-flipped`);
         openCards[1].classList.toggle(`is-flipped`);
         openCards = [];
+        switchPlayer();
     }
+    console.log(clickedCards);
 }
+
+let scoreboard1 = document.querySelector(`.scoreboard1`);
+let scoreboard2 = document.querySelector(`.scoreboard2`);
+let currentPlayer = 0;
+let score = [0, 0];
+
+function updateScore(player) {
+    score[player]++;
+    scoreboard1.textContent = `Score: ${score[0]}`;
+    scoreboard2.textContent = `Score: ${score[1]}`;
+}
+
+function switchPlayer() {
+    currentPlayer = currentPlayer === 0 ? 1 : 0;
+}
+
+// function endGame(){
+// 	if(clickedCards.length === cards.length ){
+// 		if(score[0] > score[1])
+// 	}
+// }
