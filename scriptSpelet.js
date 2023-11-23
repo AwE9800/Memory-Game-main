@@ -55,7 +55,7 @@ let images = [
     `assets/Yoshi.png`,
 ];
 
-// Blandar bilderna i oordning och gör dem till 2 av varje
+// Blandar bilderna i Oordning och gör dem till 2 av varje
 let deck = [];
 
 function shuffleCards() {
@@ -121,8 +121,14 @@ function switchPlayer() {
     currentPlayer = currentPlayer === 0 ? 1 : 0;
 }
 
-// function endGame(){
-// 	if(clickedCards.length === cards.length ){
-// 		if(score[0] > score[1])
-// 	}
-// }
+function endGame() {
+    if (clickedCards.length === cards.length) {
+        if (score[0] > score[1]) {
+            alert(`${player1.value} vann`);
+        } else if (score[0] < score[1]) {
+            alert(`${player2.value} vann`);
+        } else {
+            console.log(`Det blev lika!`);
+        }
+    }
+}
