@@ -74,6 +74,11 @@ body {
     gap: 2rem;
 }
 
+.cards:hover {
+    transform: scale(1.1);
+    transition: all ease-in-out 0.3s;
+}
+
 .cards {
     width: 10rem;
     height: 10rem;
@@ -81,30 +86,36 @@ body {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 1rem;
     position: relative;
-    overflow: hidden;
-    transition: transform 2s;
     transform-style: preserve-3d;
+    transform-origin: center;
+    transition: transform 1s ease-in-out;
 }
 
-.unflipped {
+.cards.is-flipped {
+    transform: rotateY(-180deg);
+}
+.card-face {
     position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     backface-visibility: hidden;
+    border-radius: 1rem;
 }
 
-.flipped {
-    position: absolute;
-}
-
-.hidden-card {
+.card-face--front {
     transform: rotateY(180deg);
-    backface-visibility: hidden;
 }
 
-.cards:hover {
-    transform: scale(1.1);
-    transition: all ease-in-out 0.3s;
+.card-face--front > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hidden-game {
+    display: none;
+}
+.hidden {
     display: none;
 }

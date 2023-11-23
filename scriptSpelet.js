@@ -70,18 +70,36 @@ function shuffleCards() {
 shuffleCards();
 
 let cards = document.querySelectorAll(`.cards`);
-
+let openCards = [];
 for (let i = 0; i < cards.length; i++) {
     let randomIndex = Math.floor(Math.random() * deck.length);
-    let flippedImage = cards[i].querySelector('.flipped img');
-    flippedImage.src = deck[randomIndex];
+    let faceBackImg = cards[i].querySelector('.card-face--front img');
+    faceBackImg.src = deck[randomIndex];
 
     cards[i].addEventListener(`click`, function () {
-        let unFlipped = this.querySelector(`.unflipped`);
-        let flipped = this.querySelector(`.flipped`);
-
-        unFlipped.classList.add(`hidden-card`);
-        flipped.classList.remove(`hidden-card`);
+        if (openCards.length < 2) {
+            cards[i].classList.toggle(`is-flipped`);
+            openCards.push(cards[i]);
+            if (openCards.length === 2) {
+                setTimeout(ifmatch, 1000);
+            }
+        }
     });
     deck.splice(randomIndex, 1);
+}
+
+function ifmatch() {
+    let card1 = openCards[0].querySelector('.card-face--front > img');
+    let card2 = openCards[1].querySelector('.card-face--front > img');
+
+    console.log(openCards);
+    if (card1.src === card2.src) {
+        card1.classList.add(`hidden`);
+        card2.classList.add(`hidden`);
+        openCards = [];
+    } else {
+        openCards[0].classList.toggle(`is-flipped`);
+        openCards[1].classList.toggle(`is-flipped`);
+        openCards = [];
+    }
 }
