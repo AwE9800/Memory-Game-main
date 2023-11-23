@@ -74,15 +74,33 @@ body {
     gap: 2rem;
 }
 
-img {
+.cards {
     width: 10rem;
     height: 10rem;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 2s;
+    transform-style: preserve-3d;
 }
 
-img:hover {
+.unflipped {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.flipped {
+    position: absolute;
+}
+
+.hidden-card {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.cards:hover {
     transform: scale(1.1);
     transition: all ease-in-out 0.3s;
 }

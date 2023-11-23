@@ -55,18 +55,33 @@ let images = [
     `assets/Yoshi.png`,
 ];
 
-let gamePlan = document.getElementById('gamePlan');
-let cards = [];
-let flippedCards = [];
-let matchedcards = [];
-let curentPlayer = 1;
-let player1Pairs = 0;
-let player2Pairs = 0;
-let cardSet = images.concat(images);
+let deck = [];
 
-playPvpBtn.addEventListener(`click`, function () {
-    let korteT = document.querySelector(`.kd`);
-    let randomBilder = cardSet;
-    randomBilder.sort(() => Math.random() - 0.5);
-    korteT.append(randomBilder);
-});
+function shuffleCards() {
+    deck = images.concat(images);
+    for (let i = 0; i < deck.length; i++) {
+        let k = Math.floor(Math.random() * deck.length);
+        let temp = deck[i];
+        deck[i] = deck[k];
+        deck[k] = temp;
+    }
+    console.log(deck);
+}
+shuffleCards();
+
+let cards = document.querySelectorAll(`.cards`);
+
+for (let i = 0; i < cards.length; i++) {
+    let randomIndex = Math.floor(Math.random() * deck.length);
+    let flippedImage = cards[i].querySelector('.flipped img');
+    flippedImage.src = deck[randomIndex];
+
+    cards[i].addEventListener(`click`, function () {
+        let unFlipped = this.querySelector(`.unflipped`);
+        let flipped = this.querySelector(`.flipped`);
+
+        unFlipped.classList.add(`hidden-card`);
+        flipped.classList.remove(`hidden-card`);
+    });
+    deck.splice(randomIndex, 1);
+}
