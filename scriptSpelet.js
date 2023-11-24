@@ -28,8 +28,12 @@ btnMotDator.addEventListener('click', function () {
 });
 
 playPvpBtn.addEventListener(`click`, function () {
-    player1.textContent = namePlayer1.value;
-    player2.textContent = namePlayer2.value;
+    if (namePlayer1.value.trim() !== '') {
+        player1.textContent = namePlayer1.value;
+    }
+    if (namePlayer2.value.trim() !== '') {
+        player2.textContent = namePlayer2.value;
+    }
     pvpPage.classList.add(`hidden-pvp`);
     gamePage.classList.remove(`hidden-game`);
 });
@@ -71,14 +75,14 @@ shuffleCards();
 
 let cards = document.querySelectorAll(`.cards`);
 let openCards = [];
-let cardCheck = true;
+
 for (let i = 0; i < cards.length; i++) {
     let randomIndex = Math.floor(Math.random() * deck.length);
     let faceBackImg = cards[i].querySelector('.card-face--front img');
     faceBackImg.src = deck[randomIndex];
 
     cards[i].addEventListener(`click`, function cardClicker() {
-        if (openCards.length < 2 && cardCheck && !cards[i].classList.contains('is-flipped')) {
+        if (openCards.length < 2 && !cards[i].classList.contains('is-flipped')) {
             cards[i].classList.toggle(`is-flipped`);
             openCards.push(cards[i]);
             if (openCards.length === 2) {
@@ -133,7 +137,11 @@ function endGame() {
         } else if (score[0] < score[1]) {
             alert(`${player2.value} vann`);
         } else {
-            console.log(`Det blev lika!`);
+            alert(`det blev lika`);
         }
     }
 }
+
+document.querySelector('.newgame').addEventListener('click', function () {
+    document.location.reload();
+});
