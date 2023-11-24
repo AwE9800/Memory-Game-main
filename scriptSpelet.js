@@ -38,7 +38,9 @@ playPvpBtn.addEventListener(`click`, function () {
     gamePage.classList.remove(`hidden-game`);
 });
 playPveBtn.addEventListener(`click`, function () {
-    player1.textContent = namePlayer1Data.value;
+    if (namePlayer1.value.trim() !== '') {
+        player1.textContent = namePlayer1.value;
+    }
     player2.textContent = `Dator`;
     sectionData.classList.add(`hidden-data`);
     gamePage.classList.remove(`hidden-game`);
