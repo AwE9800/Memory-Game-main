@@ -4,8 +4,8 @@ to do list
 
 2. göra en reset knapp?
 
-3. spela mot datorn?
+3.leta efter små fix och kolla om det finns några buggar
 
-4.leta efter små fix och kolla om det finns några buggar
+4. Vi MÅSTE!!! göra javascripten finnare och även kolla över class namn så dem ser bra ut
 
-5. kolla igenom koden och göra den finare
+5. spela mot datorn?
