@@ -6,4 +6,6 @@ to do list
 
 3. spela mot datorn?
 
-4. kolla igenom koden och göra den finare
+4.leta efter små fix och kolla om det finns några buggar
+
+5. kolla igenom koden och göra den finare
