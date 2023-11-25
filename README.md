@@ -4,7 +4,7 @@ To do list
 
 1. Currentplayer, ändra färg på: alvin & eric ---- OK
 
-1. Göra en reset knapp?: -- Eric & Alvin
+1. Göra en reset knapp?: -- Eric & Alvin ---- ok
 
 1. Leta efter små fix och kolla om det finns några buggar
 

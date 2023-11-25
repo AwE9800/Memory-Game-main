@@ -5,7 +5,7 @@
   --clr-btn: #ffb703;
   --clr-font: #fefae0;
 
-  --ff-family: "EB Garamond", serif;
+  --ff-family: "Super Mario 256", sans-serif;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   align-items: center;
   background-color: var(--clr-background);
   color: var(--clr-font);
-  font-family: "EB Garamond", serif;
+  font-family: var(--ff-family);
 }
 
 .section-meny {
@@ -40,8 +40,8 @@ body {
 
 .btn {
   cursor: pointer;
-  width: 10rem;
-  height: 2rem;
+  width: 15rem;
+  height: 3rem;
   border-radius: 1rem;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

@@ -1,81 +1,81 @@
 :root {
-    --clr-background: #8ecae6;
-    --clr-main: #62b6cb;
+  --clr-background: #8ecae6;
+  --clr-main: #62b6cb;
 
-    --clr-btn: #ffb703;
+  --clr-btn: #ffb703;
 
-    --clr-font: #fefae0;
+  --clr-font: #fefae0;
 
-    --ff-family: 'EB Garamond', serif;
+  --ff-family: "Super Mario 256", sans-serif;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--clr-background);
-    color: var(--clr-font);
-    font-family: 'EB Garamond', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-background);
+  color: var(--clr-font);
+  font-family: var(--ff-family);
 }
 
 .PVP {
-    width: 30%;
-    height: 40%;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    background-color: var(--clr-main);
-    border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    gap: 1rem;
+  width: 30%;
+  height: 40%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--clr-main);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  gap: 1rem;
 }
 
 .rubrik-PVP {
-    width: 100%;
-    border-bottom: 1px solid gray;
-    padding-bottom: 1rem;
-    text-align: center;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  padding-bottom: 1rem;
+  text-align: center;
 }
 
 .section-player1 {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 .section-player2 {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 input {
-    width: 20rem;
-    height: 2.5rem;
-    border: none;
-    outline: var(--clr-main);
-    border-radius: 0.2rem;
-    padding-inline-start: 1rem;
+  width: 20rem;
+  height: 2.5rem;
+  border: none;
+  outline: var(--clr-main);
+  border-radius: 0.2rem;
+  padding-inline-start: 1rem;
 }
 
 .play-game-btn {
-    width: 24rem;
-    height: 2.5rem;
-    border-radius: 1rem;
-    border: none;
-    margin-top: 1rem;
-    background-color: var(--clr-btn);
-    color: var(--clr-font);
-    cursor: pointer;
+  width: 24rem;
+  height: 2.5rem;
+  border-radius: 1rem;
+  border: none;
+  margin-top: 1rem;
+  background-color: var(--clr-btn);
+  color: var(--clr-font);
+  cursor: pointer;
 }
 
 .play-game-btn:hover {
-    transform: scale(1.1);
-    transition: all ease-in-out 0.1s;
+  transform: scale(1.1);
+  transition: all ease-in-out 0.1s;
 }
 
 .hidden-pvp {
-    display: none;
+  display: none;
 }
