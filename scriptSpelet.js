@@ -148,10 +148,10 @@ function endGame() {
   if (clickedCards.length === cards.length) {
     if (score[0] > score[1]) {
       alert.classList.remove("hidden-winner");
-      closebtn.textContent = `${namePlayer1.value} vann`;
+      closebtn.textContent = `${namePlayer1.value} vann!!`;
     } else if (score[0] < score[1]) {
       alert.classList.remove("hidden-winner");
-      closebtn.textContent = `${namePlayer2.value} vann`;
+      closebtn.textContent = `${namePlayer2.value} vann!!`;
     } else {
       alert.classList.remove("hidden-winner");
       closebtn.textContent = "Det blev lika";
