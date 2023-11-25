@@ -191,9 +191,11 @@ const resetBtn = document.querySelector('.resetgame');
 function removetoogle() {
     for (let i = 0; i < cards.length; i++) {
         cards[i].classList.remove(`is-flipped`);
-        cards[i].querySelector('.card-face--front > img').classList.remove(`hidden`);
         cards[i].style.pointerEvents = 'auto';
-        spreadCards(cards[i]);
+        setTimeout(() => {
+            cards[i].querySelector('.card-face--front > img').classList.remove(`hidden`);
+            spreadCards(cards[i]);
+        }, 1000);
     }
 }
 
