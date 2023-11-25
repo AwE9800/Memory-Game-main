@@ -12,7 +12,6 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-color: var(--clr-background);
   font-family: var(--ff-family);
   color: var(--clr-font);
 }
