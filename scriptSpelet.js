@@ -75,35 +75,45 @@ function shuffleCards() {
 }
 shuffleCards();
 
-let cards = document.querySelectorAll(`.cards`);
-let openCards = [];
-
-for (let i = 0; i < cards.length; i++) {
+// Den här funktionen delar ut bilderna på varje kort
+function spreadCards(card) {
   let randomIndex = Math.floor(Math.random() * deck.length);
-  let faceBackImg = cards[i].querySelector(".card-face--front img");
+  let faceBackImg = card.querySelector(".card-face--front img");
   faceBackImg.src = deck[randomIndex];
-
-  cards[i].addEventListener(`click`, function cardClicker() {
-    if (openCards.length < 2 && !cards[i].classList.contains("is-flipped")) {
-      cards[i].classList.toggle(`is-flipped`);
-      openCards.push(cards[i]);
-      if (openCards.length === 2) {
-        setTimeout(cardsMatch, 1000);
-      }
-    }
-  });
   deck.splice(randomIndex, 1);
 }
+
+let cards = document.querySelectorAll(`.cards`);
+
+// Loopar varje kort så att man sedan kan klicka och vända på dem
+for (let i = 0; i < cards.length; i++) {
+  spreadCards(cards[i]);
+
+  cards[i].addEventListener(`click`, (e) => {
+    cardClicker(cards[i]);
+  });
+}
+
+//
+let openCards = [];
+
+function cardClicker(card) {
+  if (openCards.length < 2 && !card.classList.contains("is-flipped")) {
+    card.classList.toggle(`is-flipped`);
+    openCards.push(card);
+    if (openCards.length === 2) {
+      setTimeout(cardsMatch, 1000);
+    }
+  }
+}
+
 let clickedCards = [];
 
 function cardsMatch() {
   let card1 = openCards[0].querySelector(".card-face--front > img");
   let card2 = openCards[1].querySelector(".card-face--front > img");
   if (card1.src === card2.src) {
-    card1.classList.add(`hidden`);
-    card2.classList.add(`hidden`);
-    openCards[0].style.pointerEvents = "none";
-    openCards[1].style.pointerEvents = "none";
+    tooglecards(openCards);
     clickedCards.push(card1, card2);
     updateScore(currentPlayer);
     endGame();
@@ -116,14 +126,23 @@ function cardsMatch() {
   }
   console.log(currentPlayer);
 }
+function tooglecards(card) {
+  card[0].querySelector(".card-face--front > img").classList.add(`hidden`);
+  card[1].querySelector(".card-face--front > img").classList.add(`hidden`);
+  card[0].style.pointerEvents = "none";
+  card[1].style.pointerEvents = "none";
+}
 
 let scoreboard1 = document.querySelector(`.scoreboard1`);
 let scoreboard2 = document.querySelector(`.scoreboard2`);
-let currentPlayer = 0;
+let currentPlayer = 1;
 let score = [0, 0];
 
 function updateScore(player) {
   score[player]++;
+  renderscore();
+}
+function renderscore() {
   scoreboard1.textContent = `Score: ${score[0]}`;
   scoreboard2.textContent = `Score: ${score[1]}`;
 }
@@ -133,9 +152,13 @@ function switchPlayer() {
   if (currentPlayer === 0) {
     player1.style.color = "#2a9d8f";
     player2.style.color = "";
+    scoreboard1.style.color = "#2a9d8f";
+    scoreboard2.style.color = "";
   } else if (currentPlayer === 1) {
     player1.style.color = "";
+    scoreboard1.style.color = "";
     player2.style.color = "#2a9d8f";
+    scoreboard2.style.color = "#2a9d8f";
   }
 }
 switchPlayer();
@@ -161,4 +184,29 @@ function endGame() {
 
 document.querySelector(".newgame").addEventListener("click", function () {
   document.location.reload();
+});
+
+const resetBtn = document.querySelector(".resetgame");
+
+function removetoogle() {
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].classList.remove(`is-flipped`);
+    cards[i].style.pointerEvents = "auto";
+    setTimeout(() => {
+      cards[i]
+        .querySelector(".card-face--front > img")
+        .classList.remove(`hidden`);
+      spreadCards(cards[i]);
+    }, 1000);
+  }
+}
+
+resetBtn.addEventListener("click", function () {
+  clickedCards = [];
+  openCards = [];
+  deck = [];
+  score = [0, 0];
+  renderscore();
+  shuffleCards();
+  removetoogle();
 });
