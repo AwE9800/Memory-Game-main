@@ -28,20 +28,20 @@
             <h1>Memory Game</h1>
             <section class="main-section">
                 <h2>Val av spel</h2>
-                <button class="btn btn-mot-andra">Spela mot andra</button>
-                <button class="btn btn-mot-dator">Spela mot dator</button>
+                <button class="btn btn-one-vs-one">Spela mot andra</button>
+                <button class="btn btn-vs-computer">Spela mot dator</button>
             </section>
         </section>
         <!-- Section player vs player -->
         <section class="PVP hidden-pvp">
-            <h2 class="rubrik-PVP">Spela mot andra</h2>
-            <section class="section-player1">
+            <h2 class="headline-PVP">Spela mot andra</h2>
+            <section class="section-player-one">
                 <label for="player1">Spelare 1</label>
-                <input class="player1-name" type="text" placeholder="Skriva namn på spelare 1" />
+                <input class="input-name-player-one" type="text" placeholder="Skriva namn på spelare 1" />
             </section>
-            <section class="section-player2">
+            <section class="section-player-two">
                 <label for="player2">Spelare 2</label>
-                <input class="player2-name" type="text" placeholder="Skriva namn på spelare 2" />
+                <input class="input-name-player-two" type="text" placeholder="Skriva namn på spelare 2" />
             </section>
             <button class="play-game-btn">Starta spelet</button>
         </section>
@@ -65,29 +65,26 @@
             <header class="section-scoreboard">
                 <div class="players-score">
                     <div class="conatiner-info">
-                        <h2 class="player1">Player 1</h2>
-                        <h2 class="scoreboard1">Score: 0</h2>
+                        <h2 class="player-one">Player 1</h2>
+                        <h2 class="score-player-one">Score: 0</h2>
                     </div>
                     <div class="scoreboard-vs">
                         <h1>VS</h1>
                     </div>
                     <div class="conatiner-info">
-                        <h2 class="player2">Player 2</h2>
-                        <h2 class="scoreboard2">Score: 0</h2>
+                        <h2 class="player-two">Player 2</h2>
+                        <h2 class="score-player-two">Score: 0</h2>
                     </div>
                 </div>
-                <div class="section-gamewinner">
-                    <h2 class="gamewinner hidden">Player.. wins the game</h2>
-                </div>
-                <div class="game">
+                <div class="btn-container">
                     <button class="resetgame btn">Reset game</button>
                     <button class="btn newgame">New game</button>
                 </div>
             </header>
             <!-- gameboard -->
-            <section class="gamet">
+            <section class="game-board">
                 <h2>Memory Game</h2>
-                <section class="section-bilderna">
+                <section class="cards-container">
                     <div class="cards">
                         <div class="card-face card-face--back">
                             <img src="assets/BackgroundImg.jpg" alt="BackgroundImg" />

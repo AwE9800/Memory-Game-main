@@ -1,15 +1,15 @@
 `use strict`;
 
-const namePlayer1 = document.querySelector(`.player1-name`);
+const inputNamePlayerOne = document.querySelector(`.input-name-player-one`);
 const namePlayer1Data = document.querySelector(`.name-player-1-data`);
-const namePlayer2 = document.querySelector(`.player2-name`);
-const player1 = document.querySelector(`.player1`);
-const player2 = document.querySelector(`.player2`);
+const inputNamePlayerTwo = document.querySelector(`.input-name-player-two`);
+const playerOne = document.querySelector(`.player-one`);
+const playerTwo = document.querySelector(`.player-two`);
 
 const playPvpBtn = document.querySelector(`.play-game-btn`);
 const playPveBtn = document.querySelector(`.Starta`);
-const btnMotAndra = document.querySelector('.btn-mot-andra');
-const btnMotDator = document.querySelector('.btn-mot-dator');
+const btnOneVsOne = document.querySelector('.btn-one-vs-one');
+const btnVsComputer = document.querySelector('.btn-vs-computer');
 const pvpPage = document.querySelector(`.PVP`);
 const gamePage = document.querySelector(`.memory-game`);
 const sectionMeny = document.querySelector('.section-meny');
@@ -17,31 +17,31 @@ const sectionData = document.querySelector('.section-data');
 
 const img = document.querySelector(`.hidden1`);
 
-btnMotAndra.addEventListener('click', function () {
+btnOneVsOne.addEventListener('click', function () {
     sectionMeny.classList.add('hidden-meny');
     pvpPage.classList.remove('hidden-pvp');
 });
 
-btnMotDator.addEventListener('click', function () {
+btnVsComputer.addEventListener('click', function () {
     sectionMeny.classList.add('hidden-meny');
     sectionData.classList.remove('hidden-data');
 });
 
 playPvpBtn.addEventListener(`click`, function () {
-    if (namePlayer1.value.trim() !== '') {
-        player1.textContent = namePlayer1.value;
+    if (inputNamePlayerOne.value.trim() !== '') {
+        playerOne.textContent = inputNamePlayerOne.value;
     }
-    if (namePlayer2.value.trim() !== '') {
-        player2.textContent = namePlayer2.value;
+    if (inputNamePlayerTwo.value.trim() !== '') {
+        playerTwo.textContent = inputNamePlayerTwo.value;
     }
     pvpPage.classList.add(`hidden-pvp`);
     gamePage.classList.remove(`hidden-game`);
 });
 playPveBtn.addEventListener(`click`, function () {
-    if (namePlayer1.value.trim() !== '') {
-        player1.textContent = namePlayer1.value;
+    if (inputNamePlayerOne.value.trim() !== '') {
+        playerOne.textContent = inputNamePlayerOne.value;
     }
-    player2.textContent = `Dator`;
+    playerTwo.textContent = `Dator`;
     sectionData.classList.add(`hidden-data`);
     gamePage.classList.remove(`hidden-game`);
 });
@@ -133,8 +133,8 @@ function tooglecards(card) {
     card[1].style.pointerEvents = 'none';
 }
 
-let scoreboard1 = document.querySelector(`.scoreboard1`);
-let scoreboard2 = document.querySelector(`.scoreboard2`);
+let scorePlayerOne = document.querySelector(`.score-player-one`);
+let scorePlayerTwo = document.querySelector(`.score-player-two`);
 let currentPlayer = 1;
 let score = [0, 0];
 
@@ -143,22 +143,22 @@ function updateScore(player) {
     renderscore();
 }
 function renderscore() {
-    scoreboard1.textContent = `Score: ${score[0]}`;
-    scoreboard2.textContent = `Score: ${score[1]}`;
+    scorePlayerOne.textContent = `Score: ${score[0]}`;
+    scorePlayerTwo.textContent = `Score: ${score[1]}`;
 }
 
 function switchPlayer() {
     currentPlayer = currentPlayer === 0 ? 1 : 0;
     if (currentPlayer === 0) {
-        player1.style.color = '#2a9d8f';
-        player2.style.color = '';
-        scoreboard1.style.color = '#2a9d8f';
-        scoreboard2.style.color = '';
+        playerOne.style.color = '#2a9d8f';
+        playerTwo.style.color = '';
+        scorePlayerOne.style.color = '#2a9d8f';
+        scorePlayerTwo.style.color = '';
     } else if (currentPlayer === 1) {
-        player1.style.color = '';
-        scoreboard1.style.color = '';
-        player2.style.color = '#2a9d8f';
-        scoreboard2.style.color = '#2a9d8f';
+        playerOne.style.color = '';
+        scorePlayerOne.style.color = '';
+        playerTwo.style.color = '#2a9d8f';
+        scorePlayerTwo.style.color = '#2a9d8f';
     }
 }
 switchPlayer();
@@ -171,10 +171,10 @@ function endGame() {
     if (clickedCards.length === cards.length) {
         if (score[0] > score[1]) {
             alert.classList.remove('hidden-winner');
-            closebtn.textContent = `${namePlayer1.value} vann!!`;
+            closebtn.textContent = `${inputNamePlayerOne.value} vann!!`;
         } else if (score[0] < score[1]) {
             alert.classList.remove('hidden-winner');
-            closebtn.textContent = `${namePlayer2.value} vann!!`;
+            closebtn.textContent = `${inputNamePlayerTwo.value} vann!!`;
         } else {
             alert.classList.remove('hidden-winner');
             closebtn.textContent = 'Det blev lika';
