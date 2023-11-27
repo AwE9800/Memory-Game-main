@@ -1,6 +1,6 @@
 To do list
 
-1. Göra en ruta där vinnaren kommer upp! -- Kalle
+1. Göra en ruta där vinnaren kommer upp! -- Kalle --- ok
 
 1. Currentplayer, ändra färg på: alvin & eric ---- OK
 
