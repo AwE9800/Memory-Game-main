@@ -9,7 +9,7 @@
     --ff-family: 'Super Mario 256', sans-serif;
 }
 
-body {
+/* body {
     width: 100%;
     height: 100%;
     display: flex;
@@ -18,7 +18,7 @@ body {
     background-color: var(--clr-background);
     color: var(--clr-font);
     font-family: var(--ff-family);
-}
+} */
 
 .wrapper {
     width: 25rem;

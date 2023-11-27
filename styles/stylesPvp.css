@@ -9,14 +9,14 @@
     --ff-family: 'Super Mario 256', sans-serif;
 }
 
-body {
+/* body {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--clr-background);
     color: var(--clr-font);
     font-family: var(--ff-family);
-}
+} */
 
 .PVP {
     width: 30rem;
@@ -51,7 +51,7 @@ body {
     gap: 0.2rem;
 }
 
-input {
+.input-pvp {
     width: 20rem;
     height: 2.5rem;
     border: none;
