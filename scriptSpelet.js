@@ -162,7 +162,6 @@ function switchPlayer() {
     }
 }
 switchPlayer();
-console.log(currentPlayer);
 
 let closebtn = document.querySelector('.closebtn');
 let alert = document.querySelector('.alert');
@@ -171,10 +170,18 @@ function endGame() {
     if (clickedCards.length === cards.length) {
         if (score[0] > score[1]) {
             alert.classList.remove('hidden-winner');
-            closebtn.textContent = `${inputNamePlayerOne.value} vann!!`;
+            if (inputNamePlayerOne.value === ``) {
+                closebtn.textContent = `Player 1 vann!!`;
+            } else {
+                closebtn.textContent = `${inputNamePlayerOne.value} vann!!`;
+            }
         } else if (score[0] < score[1]) {
             alert.classList.remove('hidden-winner');
-            closebtn.textContent = `${inputNamePlayerTwo.value} vann!!`;
+            if (inputNamePlayerTwo.value === ``) {
+                closebtn.textContent = `Player 2 vann!!`;
+            } else {
+                closebtn.textContent = `${inputNamePlayerTwo.value} vann!!`;
+            }
         } else {
             alert.classList.remove('hidden-winner');
             closebtn.textContent = 'Det blev lika';
@@ -207,4 +214,5 @@ resetBtn.addEventListener('click', function () {
     renderscore();
     shuffleCards();
     removetoogle();
+    endGame();
 });
