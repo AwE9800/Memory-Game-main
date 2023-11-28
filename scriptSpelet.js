@@ -221,13 +221,6 @@ function resetGame() {
     endGame();
 }
 
-resetBtn.addEventListener('click', function () {
-    clickedCards = [];
-    openCards = [];
-    deck = [];
-    score = [0, 0];
-    renderscore();
-    shuffleCards();
-    removetoogle();
-    endGame();
-});
+closeBtn.addEventListener('click', resetGame); // Reset av spelet när klick, spela igen när en spelare vunnit
+
+resetBtn.addEventListener('click', resetGame); // reset av spelet när man klickar på knappen reset
