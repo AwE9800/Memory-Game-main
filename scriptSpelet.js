@@ -18,12 +18,12 @@ const sectionData = document.querySelector(".section-data");
 
 const img = document.querySelector(`.hidden1`);
 
-// När man klickar på knappen 1vs1 så kommer man till skriva in namn delen
+// När man klickar på knappen 1vs1 så kommer man till skriva in namn delen för spel mot varandra
 btnOneVsOne.addEventListener("click", function () {
   sectionMeny.classList.add("hidden-meny");
   pvpPage.classList.remove("hidden-pvp");
 });
-// När man klickar på knappen dator så kommer man till skriva in namn delen
+// När man klickar på knappen dator så kommer man till skriva in namn delen för spel mot dator
 btnVsComputer.addEventListener("click", function () {
   sectionMeny.classList.add("hidden-meny");
   sectionData.classList.remove("hidden-data");
@@ -42,9 +42,7 @@ playPvpBtn.addEventListener(`click`, function () {
   gamePage.classList.remove(`hidden-game`);
 });
 // När man klickar på knappen starta spelet så kommer man till spelet, i den här functionen skriver man också in namen på spelarna samt väljer svårehetsgrad på datorn
-playPveBtn.addEventListener(`click`, playVsDator);
-
-function playVsDator() {
+playPveBtn.addEventListener(`click`, function () {
   if (inputNamePlayerOne.value.trim() !== "") {
     // Om den inte är tom får jag inpiut value, om den är tom får jag html value.
     playerOne.textContent = inputNamePlayerOne.value;
@@ -52,25 +50,7 @@ function playVsDator() {
   playerTwo.textContent = `Dator`;
   sectionData.classList.add(`hidden-data`);
   gamePage.classList.remove(`hidden-game`);
-  let ifClicked = false;
-}
-
-function pickCardDator() {
-  if (!ifClicked) {
-    if (currentPlayer === 0) {
-      const unFlippedCards = Array.from(cards).filter(
-        (card) => !card.classList.contains("is-flipped")
-      );
-      const cs = Math.floor(Math.random() * unFlippedCards.length);
-    }
-  }
-
-  cardClicker(unFlippedCards[cs]);
-  console.log(unFlippedCards);
-}
-
-pickCardDator();
-
+});
 // Bilderna till memoryt
 let images = [
   `assets/Bowser_Jr.png`,
