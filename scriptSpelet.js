@@ -42,7 +42,9 @@ playPvpBtn.addEventListener(`click`, function () {
   gamePage.classList.remove(`hidden-game`);
 });
 // När man klickar på knappen starta spelet så kommer man till spelet, i den här functionen skriver man också in namen på spelarna samt väljer svårehetsgrad på datorn
-playPveBtn.addEventListener(`click`, function () {
+playPveBtn.addEventListener(`click`, playVsDator);
+
+function playVsDator() {
   if (inputNamePlayerOne.value.trim() !== "") {
     // Om den inte är tom får jag inpiut value, om den är tom får jag html value.
     playerOne.textContent = inputNamePlayerOne.value;
@@ -50,7 +52,25 @@ playPveBtn.addEventListener(`click`, function () {
   playerTwo.textContent = `Dator`;
   sectionData.classList.add(`hidden-data`);
   gamePage.classList.remove(`hidden-game`);
-});
+  let ifClicked = false;
+}
+
+function pickCardDator() {
+  if (!ifClicked) {
+    if (currentPlayer === 0) {
+      const unFlippedCards = Array.from(cards).filter(
+        (card) => !card.classList.contains("is-flipped")
+      );
+      const cs = Math.floor(Math.random() * unFlippedCards.length);
+    }
+  }
+
+  cardClicker(unFlippedCards[cs]);
+  console.log(unFlippedCards);
+}
+
+pickCardDator();
+
 // Bilderna till memoryt
 let images = [
   `assets/Bowser_Jr.png`,
