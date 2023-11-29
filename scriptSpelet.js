@@ -41,7 +41,7 @@ playPvpBtn.addEventListener(`click`, function () {
     pvpPage.classList.add(`hidden-pvp`);
     gamePage.classList.remove(`hidden-game`);
 });
-// När man klickar på knappen starta spelet så kommer man till spelet, i den här functionen skriver man också in namen på spelarna samt väljer svårehetsgrad på datorn
+// När man klickar på knappen starta spelet så kommer man till spelet, i den här functionen skriver man också in namn på spelaren samt väljer svårehetsgrad på datorn
 playPveBtn.addEventListener(`click`, function () {
     if (inputNamePlayerOne.value.trim() !== '') {
         // Om den inte är tom får jag inpiut value, om den är tom får jag html value.
