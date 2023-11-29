@@ -88,7 +88,6 @@ body {
     grid-template-columns: repeat(6, 1fr);
     place-items: center;
     gap: 1.5rem;
-    border: 5px solid var(--clr-btn);
     padding-top: 1rem;
     padding: 0.5rem;
 }
