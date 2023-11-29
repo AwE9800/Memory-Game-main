@@ -215,14 +215,21 @@ const closeBtn = document.querySelector(".closebtn");
 
 // Reset av spelet function
 function resetGame() {
-  clickedCards = [];
-  openCards = [];
-  deck = [];
-  score = [0, 0];
-  renderscore();
-  shuffleCards();
-  removetoogle();
-  endGame();
+  clickedCards = []; // hämtar function clickedCards för reset av det
+
+  openCards = []; // hämtar function openCards för reset av det
+
+  deck = []; // hämtar function deck för reset av det
+
+  score = [0, 0]; // hämtar function score för reset av det
+
+  renderscore(); // hämtar function renderscore för reset av det
+
+  shuffleCards(); // hämtar function shuffleCards för reset av det
+
+  removetoogle(); // hämtar function removetoggle för reset av det
+
+  endGame(); // hämtar function endGame för reset av det
 }
 
 closeBtn.addEventListener("click", resetGame); // Reset av spelet när klick, spela igen när en spelare vunnit
