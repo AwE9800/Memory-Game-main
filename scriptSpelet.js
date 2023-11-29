@@ -1,5 +1,6 @@
 `use strict`;
 
+// Variabler för de classer som vi vill hämta in
 const inputNamePlayerOne = document.querySelector(`.input-name-player-one`);
 const namePlayer1Data = document.querySelector(`.name-player-1-data`);
 const inputNamePlayerTwo = document.querySelector(`.input-name-player-two`);
@@ -17,28 +18,33 @@ const sectionData = document.querySelector(".section-data");
 
 const img = document.querySelector(`.hidden1`);
 
+// När man klickar på knappen 1vs1 så kommer man till skriva in namn delen
 btnOneVsOne.addEventListener("click", function () {
   sectionMeny.classList.add("hidden-meny");
   pvpPage.classList.remove("hidden-pvp");
 });
-
+// När man klickar på knappen dator så kommer man till skriva in namn delen
 btnVsComputer.addEventListener("click", function () {
   sectionMeny.classList.add("hidden-meny");
   sectionData.classList.remove("hidden-data");
 });
-
+// När man klickar på knappen starta spelet så kommer man till spelet, i den här functionen skriver man också in namen på spelarna
 playPvpBtn.addEventListener(`click`, function () {
   if (inputNamePlayerOne.value.trim() !== "") {
+    // Om den inte är tom får jag inpiut value, om den är tom får jag html value.
     playerOne.textContent = inputNamePlayerOne.value;
   }
   if (inputNamePlayerTwo.value.trim() !== "") {
+    // Om den inte är tom får jag inpiut value, om den är tom får jag html value.
     playerTwo.textContent = inputNamePlayerTwo.value;
   }
   pvpPage.classList.add(`hidden-pvp`);
   gamePage.classList.remove(`hidden-game`);
 });
+// När man klickar på knappen starta spelet så kommer man till spelet, i den här functionen skriver man också in namen på spelarna samt väljer svårehetsgrad på datorn
 playPveBtn.addEventListener(`click`, function () {
   if (inputNamePlayerOne.value.trim() !== "") {
+    // Om den inte är tom får jag inpiut value, om den är tom får jag html value.
     playerOne.textContent = inputNamePlayerOne.value;
   }
   playerTwo.textContent = `Dator`;
@@ -61,9 +67,10 @@ let images = [
   `assets/Yoshi.png`,
 ];
 
-// Blandar bilderna i Oordning och gör dem till 2 av varje
+// En tom array där de shufflade bilderna läggs i
 let deck = [];
 
+// Blandar bilderna och gör de 12 kort * 2
 function shuffleCards() {
   deck = images.concat(images);
   for (let i = 0; i < deck.length; i++) {
@@ -75,17 +82,17 @@ function shuffleCards() {
 }
 shuffleCards();
 
-// Den här funktionen delar ut bilderna på varje kort
+// Den här funktionen tar "deck" och delar ut random på enskild card
 function spreadCards(card) {
   let randomIndex = Math.floor(Math.random() * deck.length);
   let faceBackImg = card.querySelector(".card-face--front img");
   faceBackImg.src = deck[randomIndex];
   deck.splice(randomIndex, 1);
 }
-
+// Variabel varje kort
 let cards = document.querySelectorAll(`.cards`);
 
-// Loopar ut varje kort så att man sedan kan klicka och vända på dem
+// Tar varje kort så man kan klicka på dem
 for (let i = 0; i < cards.length; i++) {
   spreadCards(cards[i]);
 
@@ -94,9 +101,10 @@ for (let i = 0; i < cards.length; i++) {
   });
 }
 
-//
+//Variabel tom array för de kort som är öppna
 let openCards = [];
 
+//Functionen kollar om det är 2 öppna kort så kallar de på functionen "cardsmatch"
 function cardClicker(card) {
   if (openCards.length < 2 && !card.classList.contains("is-flipped")) {
     card.classList.toggle(`is-flipped`);
@@ -106,15 +114,16 @@ function cardClicker(card) {
     }
   }
 }
+// Tom array för de kort som är vända och lika
+let pairCards = [];
 
-let clickedCards = [];
-
+// Functionen kollar om de 2 kort som är öppna är lika eller inte, om de är lika kallar de på functionen "updateScore" att det ska uppdatera score, lägga de korten i "pairCards". om de inte är lika vänds de tillbaka och functionen "switchplayer" kallas
 function cardsMatch() {
   let card1 = openCards[0].querySelector(".card-face--front > img");
   let card2 = openCards[1].querySelector(".card-face--front > img");
   if (card1.src === card2.src) {
     tooglecards(openCards);
-    clickedCards.push(card1, card2);
+    pairCards.push(card1, card2);
     updateScore(currentPlayer);
     endGame();
     openCards = [];
@@ -124,26 +133,26 @@ function cardsMatch() {
     openCards = [];
     switchPlayer();
   }
-  console.log(currentPlayer);
 }
-
+// Denna functionen är till för när paren är lika så vänds korten inte tillbaka.
 function tooglecards(card) {
   card[0].querySelector(".card-face--front > img").classList.add(`hidden`);
   card[1].querySelector(".card-face--front > img").classList.add(`hidden`);
   card[0].style.pointerEvents = "none";
   card[1].style.pointerEvents = "none";
 }
-
+// Variabler för att uppdatera score
 let scorePlayerOne = document.querySelector(`.score-player-one`);
 let scorePlayerTwo = document.querySelector(`.score-player-two`);
 let currentPlayer = 1;
 let score = [0, 0];
 
+// Uppdaterar score ut ifrån vilken spelare som fått det
 function updateScore(player) {
   score[player]++;
   renderscore();
 }
-
+// Uppdatera textcontent för score
 function renderscore() {
   scorePlayerOne.textContent = `Score: ${score[0]}`;
   scorePlayerTwo.textContent = `Score: ${score[1]}`;
@@ -165,13 +174,14 @@ function switchPlayer() {
   }
 }
 switchPlayer();
-
-let closebtn = document.querySelector(".closebtn");
-let alert = document.querySelector(".alert");
+// Variabler, kalla på class, för reset av spelet.
+const resetBtn = document.querySelector(".resetgame");
+const closeBtn = document.querySelector(".closebtn");
+const alert = document.querySelector(".alert");
 
 // Denna function bestämmer när en spelare har vunnit/inte vunnit spelet och vad som händer då.
 function endGame() {
-  if (clickedCards.length === cards.length) {
+  if (pairCards.length === cards.length) {
     if (score[0] > score[1]) {
       alert.classList.remove("hidden-winner");
       if (inputNamePlayerOne.value === ``) {
@@ -211,19 +221,16 @@ function removetoogle() {
     }, 1000);
   }
 }
-// Variabler, kalla på class, för reset av spelet.
-const resetBtn = document.querySelector(".resetgame");
-const closeBtn = document.querySelector(".closebtn");
 
 // Reset av spelet function
 function resetGame() {
-  clickedCards = []; // hämtar function clickedCards för reset av det
+  pairCards = []; // hämtar array clickedCards för reset av det
 
-  openCards = []; // hämtar function openCards för reset av det
+  openCards = []; // hämtar array openCards för reset av det
 
-  deck = []; // hämtar function deck för reset av det
+  deck = []; // hämtar array deck för reset av det
 
-  score = [0, 0]; // hämtar function score för reset av det
+  score = [0, 0]; // hämtar array score för reset av det
 
   renderscore(); // hämtar function renderscore för reset av det
 
@@ -233,10 +240,9 @@ function resetGame() {
 
   endGame(); // hämtar function endGame för reset av det
 }
-
+// Reset av spelet när klick, spela igen när en spelare vunnit
 closeBtn.addEventListener("click", function () {
-  resetGame(); // Reset av spelet när klick, spela igen när en spelare vunnit
-
+  resetGame();
   alert.classList.add("hidden-winner");
 });
 
