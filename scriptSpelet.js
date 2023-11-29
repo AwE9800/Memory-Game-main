@@ -52,6 +52,7 @@ playPveBtn.addEventListener(`click`, function () {
     gamePage.classList.remove(`hidden-game`);
 });
 
+// function som gör så att datorn väljer två kort när det är datorns tur
 function computerMove() {
     const unflippedCards = Array.from(cards).filter(card => !card.classList.contains('is-flipped'));
     setTimeout(() => {
