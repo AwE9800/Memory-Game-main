@@ -126,6 +126,7 @@ function cardsMatch() {
     }
     console.log(currentPlayer);
 }
+
 function tooglecards(card) {
     card[0].querySelector('.card-face--front > img').classList.add(`hidden`);
     card[1].querySelector('.card-face--front > img').classList.add(`hidden`);
@@ -142,6 +143,7 @@ function updateScore(player) {
     score[player]++;
     renderscore();
 }
+
 function renderscore() {
     scorePlayerOne.textContent = `Score: ${score[0]}`;
     scorePlayerTwo.textContent = `Score: ${score[1]}`;
