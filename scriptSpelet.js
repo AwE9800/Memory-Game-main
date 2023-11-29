@@ -50,14 +50,16 @@ playPveBtn.addEventListener(`click`, function () {
     playerTwo.textContent = `Dator`;
     sectionData.classList.add(`hidden-data`);
     gamePage.classList.remove(`hidden-game`);
-    computerMove();
 });
+
 function computerMove() {
     const unflippedCards = Array.from(cards).filter(card => !card.classList.contains('is-flipped'));
-    const cs = Math.floor(Math.random() * unflippedCards.length);
-    if (currentPlayer === 0) {
-        cardClicker(unflippedCards[cs]);
-    }
+    setTimeout(() => {
+        for (let i = 0; i < 1000; i++) {
+            const cs = Math.floor(Math.random() * unflippedCards.length);
+            cardClicker(unflippedCards[cs]);
+        }
+    }, 700);
 }
 
 // Bilderna till memoryt
@@ -119,7 +121,7 @@ function cardClicker(card) {
         card.classList.toggle(`is-flipped`);
         openCards.push(card);
         if (openCards.length === 2) {
-            setTimeout(cardsMatch, 1000);
+            setTimeout(cardsMatch, 1300);
         }
     }
 }
@@ -136,6 +138,9 @@ function cardsMatch() {
         updateScore(currentPlayer);
         endGame();
         openCards = [];
+        if (playerTwo.textContent === `Dator` && currentPlayer === 1) {
+            computerMove();
+        }
     } else {
         openCards[0].classList.toggle(`is-flipped`);
         openCards[1].classList.toggle(`is-flipped`);
@@ -180,6 +185,9 @@ function switchPlayer() {
         scorePlayerOne.style.color = '';
         playerTwo.style.color = '#2a9d8f';
         scorePlayerTwo.style.color = '#2a9d8f';
+        if (playerTwo.textContent === `Dator`) {
+            computerMove();
+        }
     }
 }
 switchPlayer();
