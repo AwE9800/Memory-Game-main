@@ -18,6 +18,7 @@ Slutprojekt redovisning notes
 Största utmaningen med spelet? ( individuellet svar)
 
 Beskriv fördelningen med arbetet mellan deltagarna ( Prata tillsammans om denna så vi är överrens ):
+Vi har suttit för det mesta iaf när det kom till JS tillsammans och kodat, men vid vissa tillfällen suttit enslikt och försökt lösa vissa problem.
 
 (Ca 1 minut)
 Visa spelet..( Lägg upp en plan/manus själv)
