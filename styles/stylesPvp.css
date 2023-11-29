@@ -9,15 +9,6 @@
     --ff-family: 'Super Mario 256', sans-serif;
 }
 
-/* body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--clr-background);
-    color: var(--clr-font);
-    font-family: var(--ff-family);
-} */
-
 .PVP {
     width: 30rem;
     height: 23rem;
