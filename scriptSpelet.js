@@ -50,12 +50,16 @@ playPveBtn.addEventListener(`click`, function () {
     playerTwo.textContent = `Dator`;
     sectionData.classList.add(`hidden-data`);
     gamePage.classList.remove(`hidden-game`);
+    computerMove();
 });
 function computerMove() {
     const unflippedCards = Array.from(cards).filter(card => !card.classList.contains('is-flipped'));
     const cs = Math.floor(Math.random() * unflippedCards.length);
-    cardClicker(unflippedCards[cs]);
+    if (currentPlayer === 0) {
+        cardClicker(unflippedCards[cs]);
+    }
 }
+
 // Bilderna till memoryt
 let images = [
     `assets/Bowser_Jr.png`,
