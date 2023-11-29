@@ -234,6 +234,10 @@ function resetGame() {
   endGame(); // hämtar function endGame för reset av det
 }
 
-closeBtn.addEventListener("click", resetGame); // Reset av spelet när klick, spela igen när en spelare vunnit
+closeBtn.addEventListener("click", function () {
+  resetGame(); // Reset av spelet när klick, spela igen när en spelare vunnit
+
+  alert.classList.add("hidden-winner");
+});
 
 resetBtn.addEventListener("click", resetGame); // reset av spelet när man klickar på knappen reset
