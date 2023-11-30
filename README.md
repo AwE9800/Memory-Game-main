@@ -14,8 +14,8 @@ This is a solution to the [JS1-examination](https://github.com/fe23-kyh/22a-nov-
     -   [Continued development](#continued-development)
 -   [Author](#author)
     -   [Eric Classon](#eric-classon)
-    -   [Alvin ](#alvin-Samuelsson)
-    -   [Kalle ](#kalle-Pettersson)
+    -   [Alvin Samuelsson ](#alvin-Samuelsson)
+    -   [Kalle Pettersson ](#kalle-Pettersson)
 
 ## Overview
 
