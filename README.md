@@ -15,7 +15,7 @@ This is a solution to the [JS1-examination](https://github.com/fe22-kyh/js1-exam
 - [Author](#author)
   - [Eric Classon](#eric-classon)
   - [Alvin ](#alvin-)
-  - [Kalle ](#kalle-)
+  - [Kalle pettersson](#kalle-pettersson)
 
 ## Overview
 
@@ -36,7 +36,7 @@ This is a solution to the [JS1-examination](https://github.com/fe22-kyh/js1-exam
 
 ### Screenshot
 
-![Skärmavbild 2023-11-30 kl  09 42 23](https://github.com/EricClasson/Memory-Game/assets/142800136/93acd5b0-4f3d-430c-8ec2-190c228c44b8)
+![image](https://github.com/AwE9800/Memory-Game-main/assets/146928143/8d5f6c77-6a44-4707-bd65-4d7eb44e69dc)
 
 ### Links
 
@@ -74,7 +74,7 @@ This is a solution to the [JS1-examination](https://github.com/fe22-kyh/js1-exam
 - Website - [Alvin ](https://bomanstatic.github.io/)
 - LinkedIn - [@yourusername](https://www.twitter.com/yourusername)
 
-#### Kalle
+#### Kalle pettersson
 
-- Website - [Kalle](https://github.com/MrKalleP)
+- Website - [Kalle pettersson](https://github.com/MrKalleP)
 - LinkedIn - [@yourusername](www.linkedin.com/in/kalle-pettersson-b74724294)
