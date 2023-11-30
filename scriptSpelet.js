@@ -43,7 +43,7 @@ playPvpBtn.addEventListener(`click`, function () {
 });
 // När man klickar på knappen starta spelet så kommer man till spelet, i den här functionen skriver man också in namen på spelarna samt väljer svårehetsgrad på datorn
 playPveBtn.addEventListener(`click`, function () {
-    if (inputNamePlayerOne.value.trim() !== '') {
+    if (namePlayer1Data.value.trim() !== '') {
         // Om den inte är tom får jag inpiut value, om den är tom får jag html value.
         playerOne.textContent = inputNamePlayerOne.value;
     }
