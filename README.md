@@ -40,7 +40,7 @@ This is a solution to the [JS1-examination](https://github.com/fe23-kyh/22a-nov-
 
 ### Links
 
--   Live Site URL: [Live](https://ehnwall.github.io/Memory-Game/)
+-   Live Site URL: [Live](https://awe9800.github.io/Memory-Game-main/)
 
 ## Our process
 
