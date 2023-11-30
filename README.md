@@ -1,6 +1,6 @@
 # Memory Game Mario
 
-This is a solution to the [JS1-examination](https://github.com/fe22-kyh/js1-examiniation).
+This is a solution to the [JS1-examination](https://github.com/fe23-kyh/22a-nov-exam).
 
 ## Table of contents
 
