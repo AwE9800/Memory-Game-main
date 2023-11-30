@@ -76,5 +76,5 @@ This is a solution to the [JS1-examination](https://github.com/fe22-kyh/js1-exam
 
 #### Kalle
 
-- Website - [Kalle](https://bomanstatic.github.io/)
-- LinkedIn - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Kalle](https://github.com/MrKalleP)
+- LinkedIn - [@yourusername](www.linkedin.com/in/kalle-pettersson-b74724294)
