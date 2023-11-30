@@ -4,18 +4,18 @@ This is a solution to the [JS1-examination](https://github.com/fe22-kyh/js1-exam
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [Our process](#our-process)
-  - [Built with](#built-with)
-  - [What We learned](#what-we-learned)
-  - [Continued development](#continued-development)
-- [Author](#author)
-  - [Eric Classon](#eric-classon)
-  - [Alvin ](#alvin-)
-  - [Kalle ](#kalle-)
+-   [Overview](#overview)
+    -   [The challenge](#the-challenge)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
+-   [Our process](#our-process)
+    -   [Built with](#built-with)
+    -   [What We learned](#what-we-learned)
+    -   [Continued development](#continued-development)
+-   [Author](#author)
+    -   [Eric Classon](#eric-classon)
+    -   [Alvin ](#alvin-Samuelsson)
+    -   [Kalle ](#kalle-Pettersson)
 
 ## Overview
 
@@ -40,41 +40,41 @@ This is a solution to the [JS1-examination](https://github.com/fe22-kyh/js1-exam
 
 ### Links
 
-- Live Site URL: [Live](https://ehnwall.github.io/Memory-Game/)
+-   Live Site URL: [Live](https://ehnwall.github.io/Memory-Game/)
 
 ## Our process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- JavaScript
-- Session storage
+-   Semantic HTML5 markup
+-   CSS custom properties
+-   Flexbox
+-   CSS Grid
+-   JavaScript
+-   Session storage
 
 ### What We learned
 
 ### Feature Roadmap
 
-- [x] Make the cards flip when clicked
-- [x] Change theme on:
-  - [x] Website
-  - [x] Cardback
-- [x] Play vs Computer
+-   [x] Make the cards flip when clicked
+-   [x] Change theme on:
+    -   [x] Website
+    -   [x] Cardback
+-   [x] Play vs Computer
 
 ## Author
 
 #### Eric Classon
 
-- Website - [Eric Classon](https://github.com/EricClasson)
+-   Website - [Eric Classon](https://github.com/EricClasson)
 
 #### Alvin
 
-- Website - [Alvin ](https://bomanstatic.github.io/)
-- LinkedIn - [@yourusername](https://www.twitter.com/yourusername)
+-   Website - [Alvin ](https://github.com/AwE9800)
+-   LinkedIn - [@yourusername](https://www.linkedin.com/in/alvin-samuelsson-2a682629b/)
 
 #### Kalle
 
-- Website - [Kalle](https://github.com/MrKalleP)
-- LinkedIn - [@yourusername](www.linkedin.com/in/kalle-pettersson-b74724294)
+-   Website - [Kalle](https://github.com/MrKalleP)
+-   LinkedIn - [@yourusername](www.linkedin.com/in/kalle-pettersson-b74724294)
