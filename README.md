@@ -50,5 +50,31 @@ This is a solution to the [JS1-examination](https://github.com/fe22-kyh/js1-exam
 - CSS custom properties
 - Flexbox
 - CSS Grid
+- JavaScript
+- Session storage
 
-### what we learned
+### What We learned
+
+### Feature Roadmap
+
+- [x] Make the cards flip when clicked
+- [x] Change theme on:
+  - [x] Website
+  - [x] Cardback
+- [x] Play vs Computer
+
+## Author
+
+#### Eric Classon
+
+- Website - [Eric Classon](https://github.com/EricClasson)
+
+#### Alvin
+
+- Website - [Alvin ](https://bomanstatic.github.io/)
+- LinkedIn - [@yourusername](https://www.twitter.com/yourusername)
+
+#### Kalle
+
+- Website - [Kalle](https://bomanstatic.github.io/)
+- LinkedIn - [@yourusername](https://www.twitter.com/yourusername)
