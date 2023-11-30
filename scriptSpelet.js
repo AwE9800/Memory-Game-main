@@ -45,7 +45,7 @@ playPvpBtn.addEventListener(`click`, function () {
 playPveBtn.addEventListener(`click`, function () {
     if (namePlayer1Data.value.trim() !== '') {
         // Om den inte är tom får jag inpiut value, om den är tom får jag html value.
-        playerOne.textContent = inputNamePlayerOne.value;
+        playerOne.textContent = namePlayer1Data.value;
     }
     playerTwo.textContent = `Dator`;
     sectionData.classList.add(`hidden-data`);
