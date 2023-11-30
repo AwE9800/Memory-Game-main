@@ -96,6 +96,7 @@ shuffleCards();
 
 // Den här funktionen tar "deck" och delar ut random på enskild card
 function spreadCards(card) {
+    deck = images.concat(images);
     let randomIndex = Math.floor(Math.random() * deck.length);
     let faceBackImg = card.querySelector('.card-face--front img');
     faceBackImg.src = deck[randomIndex];
